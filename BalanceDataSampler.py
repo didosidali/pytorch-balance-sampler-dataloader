@@ -14,7 +14,7 @@ class BalanceDataSampler(Sampler):
             
         modulos = max_class % count
         
-        for key, y in enumerate(dataset.y):
+        for key, y in enumerate(dataset_targets):
             self.prob += [key for i in range(max_class // count[y] + (modulos[y] > 0))]
             modulos[y] -= 1
         
